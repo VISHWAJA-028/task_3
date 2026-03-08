@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="task_3.css">
+</head>
+<body>
+
+<h3>Temperature Converter</h3>
+
+<input type="number" id="temp" placeholder="Enter temperature">
+
+<select id="unit">
+    <option value="C">Celsius to Fahrenheit</option>
+    <option value="F">Fahrenheit to Celsius</option>
+</select>
+
+<button onclick="convert()">Convert</button>
+
+<p id="result"></p>
+
+<script>
+function convert() {
+    var t = document.getElementById("temp").value;
+    var u = document.getElementById("unit").value;
+
+    if (t === "") {
+        document.getElementById("result").innerHTML = "Enter a number";
+        return;
+    }
+
+    if (u === "C") {
+        var f = (t * 9/5) + 32;
+        document.getElementById("result").innerHTML = f + " °F";
+    } else {
+        var c = (t - 32) * 5/9;
+        document.getElementById("result").innerHTML = c + " °C";
+    }
+}
+</script>
+
+</body>
+</html>
